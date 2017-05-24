@@ -1,0 +1,44 @@
+{
+  "variables": {
+    "ansible_host": "default",
+    "ansible_connection": "docker",
+    "gitbucket_version": "4.12.1"
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "shomatan/java:8-alpine",
+      "commit": "true",
+      "author": "Shoma Nishitateno",
+      "run_command": [ "-d", "-i", "-t", "--name", "{{user `ansible_host`}}", "{{.Image}}", "/bin/sh" ],
+      "changes": [
+        "EXPOSE 8080 29418",
+        "VOLUME /gitbucket",
+        "ENTRYPOINT [\"/bin/sh\"]",
+        "CMD [\"/docker-entrypoint.sh\"]"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "user": "root",
+      "playbook_file": "site.yml",
+      "extra_arguments": [
+        "--extra-vars",
+        "ansible_host={{user `ansible_host`}} ansible_connection={{user `ansible_connection`}}",
+        "--extra-vars",
+        "gitbucket_version={{user `gitbucket_version`}}"
+      ]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "shomatan/gitbucket",
+        "tag": "{{user `gitbucket_version`}}-alpine"
+      }
+    ]
+  ]
+}

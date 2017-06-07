@@ -1,9 +1,0 @@
-- hosts: all
-  roles:
-    - role: shomatan.gitbucket
-  tasks:
-    - name: Copy docker-entrypoint.sh
-      template:
-        src: docker-entrypoint.sh.j2
-        dest: /docker-entrypoint.sh
-        mode: 0755

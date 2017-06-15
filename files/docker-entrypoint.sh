@@ -1,5 +1,7 @@
 set +e
 
+# Default Listen port
+GITBUCKET_PORT=${GITBUCKET_PORT:-"8080"}
 # Default GitBucket database type
 GITBUCKET_DB_TYPE=${GITBUCKET_DB_TYPE:-"postgresql"}
 # Default GitBucket database host
@@ -37,4 +39,4 @@ echo "########################################################"
 
 echo "** Executing java -jar /opt/gitbucket.war"
 
-exec java -jar /opt/gitbucket.war
+exec java -jar /opt/gitbucket.war --port="${GITBUCKET_PORT}"

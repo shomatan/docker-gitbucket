@@ -8,6 +8,7 @@ Docker image of GitBucket which based on the latest official java image.
 
 ## Environments
 
+- GITBUCKET_PORT
 - GITBUCKET_DB_TYPE
 - GITBUCKET_DB_HOST
 - GITBUCKET_DB_NAME

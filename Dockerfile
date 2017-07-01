@@ -2,7 +2,7 @@ FROM java:8-jre-alpine
 
 MAINTAINER Shoma Nishitateno <shoma416@gmail.com>
 
-ENV GITBUCKET_VERSION=4.13 GITBUCKET_HOME=/gitbucket
+ENV GITBUCKET_VERSION=4.14 GITBUCKET_HOME=/gitbucket
 
 RUN set -ex \
     && ln -s ${GITBUCKET_HOME} /root/.gitbucket \

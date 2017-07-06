@@ -2,7 +2,7 @@ FROM java:8-jre-alpine
 
 MAINTAINER Shoma Nishitateno <shoma416@gmail.com>
 
-ENV GITBUCKET_VERSION=4.14 GITBUCKET_HOME=/gitbucket
+ENV GITBUCKET_VERSION=4.14.1 GITBUCKET_HOME=/gitbucket
 
 RUN set -ex \
     && ln -s ${GITBUCKET_HOME} /root/.gitbucket \
@@ -12,8 +12,8 @@ RUN set -ex \
 
 ADD https://github.com/gitbucket/gitbucket/releases/download/${GITBUCKET_VERSION}/gitbucket.war /opt/gitbucket.war
 
-COPY files/database.conf $GITBUCKET_HOME/
-COPY files/docker-entrypoint.sh /docker-entrypoint.sh
+COPY database.conf $GITBUCKET_HOME/
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 VOLUME $GITBUCKET_HOME
 

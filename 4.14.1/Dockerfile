@@ -2,7 +2,8 @@ FROM java:8-jre-alpine
 
 MAINTAINER Shoma Nishitateno <shoma416@gmail.com>
 
-ENV GITBUCKET_VERSION=4.14.1 GITBUCKET_HOME=/gitbucket
+ENV GITBUCKET_VERSION=4.14.1 GITBUCKET_HOME=/gitbucket GITBUCKET_PORT=8080
+ENV GITBUCKET_DB_TYPE="postgresql" GITBUCKET_DB_HOST="db" GITBUCKET_DB_NAME="gitbucket" GITBUCKET_DB_USER="gitbucket" GITBUCKET_DB_PASS="gitbucket"
 
 RUN set -ex \
     && ln -s ${GITBUCKET_HOME} /root/.gitbucket \

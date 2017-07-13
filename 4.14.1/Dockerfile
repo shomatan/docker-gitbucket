@@ -25,6 +25,4 @@ EXPOSE 8080
 # For SSH access to git repository (Optional)
 EXPOSE 29418
 
-ENTRYPOINT ["/bin/sh"]
-
-CMD ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]

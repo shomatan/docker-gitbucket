@@ -1,3 +1,6 @@
+#!/bin/sh
+#
+# -----------------------------------------------------------------------------
 set +e
 
 # Default Listen port
@@ -39,4 +42,4 @@ echo "########################################################"
 
 echo "** Executing java -jar /opt/gitbucket.war"
 
-exec java -jar /opt/gitbucket.war --port="${GITBUCKET_PORT}"
+exec java -jar /opt/gitbucket.war --port="${GITBUCKET_PORT}" "$@"

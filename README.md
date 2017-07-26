@@ -5,6 +5,7 @@ Docker image of GitBucket which based on the latest official java image.
 ## Supported database
 
 - PostgreSQL
+- MySQL
 
 ## Environments
 

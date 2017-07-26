@@ -21,7 +21,7 @@ if [ "${GITBUCKET_DB_TYPE}" == "postgresql" ]; then
         sleep 1
     done
 elif [ "${GITBUCKET_DB_TYPE}" == "mysql" ]; then
-    until mysql -h"${GITBUCKET_DB_HOST}" -u"${GITBUCKET_DB_USER}" -p"${GITBUCKET_DB_PASS}" &> /dev/null; do
+    until echo '\q' | mysql -h"${GITBUCKET_DB_HOST}" -u"${GITBUCKET_DB_USER}" -p"${GITBUCKET_DB_PASS}" "${GITBUCKET_DB_NAME}" ; do
         >&2 echo "**** MySQL is unavailable - sleeping"
         sleep 1
     done

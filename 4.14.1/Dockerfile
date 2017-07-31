@@ -15,7 +15,6 @@ RUN set -ex \
 
 ADD https://github.com/gitbucket/gitbucket/releases/download/${GITBUCKET_VERSION}/gitbucket.war /opt/gitbucket.war
 
-COPY database.conf $GITBUCKET_HOME/
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 VOLUME $GITBUCKET_HOME

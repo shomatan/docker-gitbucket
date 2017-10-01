@@ -10,8 +10,8 @@ RUN set -ex \
     && ln -s ${GITBUCKET_HOME} /root/.gitbucket \
     && apk update \
     && apk add --no-cache \
-        postgresql-client=9.5.7-r0 \
-        mysql-client=10.1.22-r0
+        postgresql-client \
+        mysql-client
 
 ADD https://github.com/gitbucket/gitbucket/releases/download/${GITBUCKET_VERSION}/gitbucket.war /opt/gitbucket.war
 

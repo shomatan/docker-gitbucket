@@ -19,3 +19,11 @@ By default use `PostgreSQL`
 |GITBUCKET_DB_NAME|gitbucket|Database name|
 |GITBUCKET_DB_USER|gitbucket|Database user name|
 |GITBUCKET_DB_PASS|gitbucket|Database user password|
+
+## Supported versions
+- 4.13
+- 4.14.1
+- 4.15
+- 4.16
+- 4.17
+- 4.18.0

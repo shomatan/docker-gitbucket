@@ -29,3 +29,4 @@ By default use `PostgreSQL`
 - 4.18.0
 - 4.19.3
 - 4.20.0
+- 4.21.2
